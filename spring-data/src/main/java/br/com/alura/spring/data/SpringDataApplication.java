@@ -35,6 +35,7 @@ public class SpringDataApplication implements CommandLineRunner {
 		this.relatoriosService = relatoriosService;
 	}
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDataApplication.class, args);
 	}

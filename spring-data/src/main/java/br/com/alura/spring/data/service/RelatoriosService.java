@@ -1,5 +1,6 @@
 package br.com.alura.spring.data.service;
 
+import br.com.alura.spring.data.SpringDataApplication;
 import br.com.alura.spring.data.orm.Funcionario;
 import br.com.alura.spring.data.repository.FuncionarioRepository;
 import org.springframework.stereotype.Service;
@@ -23,11 +24,12 @@ public class RelatoriosService {
     }
 
 
-    public void inicial(Scanner scanner) {
+    public void inicial(Scanner scanner) throws Exception {
         while (system) {
             System.out.println("Qual acao de cargo deseja executar");
             System.out.println("0 - Sair");
             System.out.println("1 - Busca Funcionário por Nome");
+            System.out.println("2 - Busca Funcionário por Salário e Data de Contratação");
 
             int action = scanner.nextInt();
 
@@ -37,6 +39,9 @@ public class RelatoriosService {
                     break;
                 case 2:
                     buscaFuncionarioNomeSalarioMaiorData(scanner);
+                default:
+                    system = false;
+                    break;
             }
         }
     }
