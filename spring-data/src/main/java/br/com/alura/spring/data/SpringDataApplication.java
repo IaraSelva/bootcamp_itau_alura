@@ -24,12 +24,15 @@ public class SpringDataApplication implements CommandLineRunner {
 
 	private final CrudUnidadeTrabalhoService unidadeTrabalhoService;
 
+	private final RelatoriosService relatoriosService;
+
 	public SpringDataApplication(CrudCargoService cargoService,
-			CrudFuncionarioService funcionarioService, 
-			CrudUnidadeTrabalhoService unidadeTrabalhoService) {
+								 CrudFuncionarioService funcionarioService,
+								 CrudUnidadeTrabalhoService unidadeTrabalhoService, RelatoriosService relatoriosService) {
 		this.cargoService = cargoService;
 		this.funcionarioService = funcionarioService;
 		this.unidadeTrabalhoService = unidadeTrabalhoService;
+		this.relatoriosService = relatoriosService;
 	}
 
 	public static void main(String[] args) {
@@ -46,6 +49,7 @@ public class SpringDataApplication implements CommandLineRunner {
 			System.out.println("1 - Funcionario");
 			System.out.println("2 - Cargo");
 			System.out.println("3 - Unidade");
+			System.out.println("4 - Relatórios");
 			
 			Integer function = scanner.nextInt();
 
@@ -59,6 +63,8 @@ public class SpringDataApplication implements CommandLineRunner {
 				case 3:
 					unidadeTrabalhoService.inicial(scanner);
 					break;
+				case 4:
+					relatoriosService.inicial(scanner);
 				default:
 					System.out.println("Finalizando");
 					system = false;
