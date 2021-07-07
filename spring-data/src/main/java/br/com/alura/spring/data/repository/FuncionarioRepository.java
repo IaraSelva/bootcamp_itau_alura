@@ -1,5 +1,6 @@
 package br.com.alura.spring.data.repository;
 
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -12,7 +13,8 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer> {
+public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer> ,
+         JpaSpecificationExecutor<Funcionario> {
 
     List<Funcionario> findByNome(String nome);
 
